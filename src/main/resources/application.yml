@@ -1,0 +1,29 @@
+resilience4j:
+  retry:
+    instances:
+      retryApi:
+        max-attempts: 3
+        wait-duration: 5s
+        retry-exceptions: #The list of that exception that will trigger a retry
+          - kcs_service.exception.FeignCustomException
+
+spring:
+  cloud:
+    consul:
+      host: ${CONSUL_SERVER_ADDRESS:localhost}
+      port: 8500
+      discovery:
+        instanceId: ${spring.application.name}:${random.value}
+    openfeign:
+      okhttp:
+        enabled: true
+
+  profiles:
+    active: dev
+  application:
+    name: pdev-kcs-service
+
+secret-key: 9393e65751c4cf44a78f83dcb7552b29c7ff4a22829c9473ff21cdaabdb7726b504fab981e9553e7848fecbf13366aa4ca271510a55dcafb6a3de0969662eb096cf15b02a76e092f439db504aea2b2dde6ee79ed5f8cfc345be6e52cbcb0e3089f68591ccb81568e8b99dbf1a2baeae94cf388daee839db769928777fd6c0d6a
+
+
+
