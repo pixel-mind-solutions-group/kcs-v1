@@ -22,6 +22,6 @@ public interface PDEVUserServiceClient {
      * @return {@link ResponseEntity<CommonResponse>} - user details response by username
      * @author maleesahsa
      */
-    @GetMapping(value = "/api/iam/v1/user/get-by-username/{userName}")
+    @GetMapping(value = "/api/iam/user/v1/get-by-username/{userName}")
     ResponseEntity<CommonResponse> getByUserName(@PathVariable String userName);
 }
