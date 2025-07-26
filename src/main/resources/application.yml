@@ -7,19 +7,28 @@ resilience4j:
         retry-exceptions: #The list of that exception that will trigger a retry
           - kcs_service.exception.FeignCustomException
 
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: "http://localhost:8070/eureka/"
+  instance:
+    prefer-ip-address: true
+
 spring:
   cloud:
-    consul:
-      host: ${CONSUL_SERVER_ADDRESS:localhost}
-      port: 8500
-      discovery:
-        instanceId: ${spring.application.name}:${random.value}
+#    consul:
+#      host: ${CONSUL_SERVER_ADDRESS:localhost}
+#      port: 8500
+#      discovery:
+#        instanceId: ${spring.application.name}:${random.value}
     openfeign:
       okhttp:
         enabled: true
 
   profiles:
-    active: dev
+    active: prod
   application:
     name: pdev-kcs-service
 

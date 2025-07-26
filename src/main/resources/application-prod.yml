@@ -6,7 +6,7 @@ spring:
   datasource:
     url: jdbc:postgresql://${POSTGRES_SERVER_ADDRESS:localhost}:5432/pdev_kcs_management
     username: postgres
-    password: 123
+    password: rempmsprod@123
     driverClassName: org.postgresql.Driver
   jpa:
     show-sql: true
