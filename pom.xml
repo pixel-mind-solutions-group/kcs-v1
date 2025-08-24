@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>kcs-service</groupId>
-    <artifactId>kcs-service</artifactId>
+    <artifactId>pdev-kcs-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>kcs-service</name>
+    <name>pdev-kcs-service</name>
     <description>A dummy project simulating Keycloak integration for continuous integration (CI) purposes, outlining the
         essential requirements for Keycloak setup and integration.
     </description>
@@ -118,18 +118,19 @@
     </dependencies>
 
     <build>
-        <finalName>pdev-kcs-service</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.4.5</version>
                 <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
+                    <to>
+                        <image>docker.io/maleeshasa/${project.artifactId}:v3</image>
+                    </to>
                 </configuration>
             </plugin>
         </plugins>
