@@ -11,7 +11,6 @@
     <groupId>kcs-service</groupId>
     <artifactId>pdev-kcs-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
     <name>pdev-kcs-service</name>
     <description>A dummy project simulating Keycloak integration for continuous integration (CI) purposes, outlining the
         essential requirements for Keycloak setup and integration.
@@ -116,7 +115,6 @@
             <scope>runtime</scope>
         </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
@@ -126,10 +124,10 @@
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
                 <artifactId>jib-maven-plugin</artifactId>
-                <version>3.4.5</version>
+                <version>3.4.6</version>
                 <configuration>
                     <to>
-                        <image>docker.io/maleeshasa/${project.artifactId}:v3</image>
+                        <image>docker.io/maleeshasa/${project.artifactId}:v4</image>
                     </to>
                 </configuration>
             </plugin>

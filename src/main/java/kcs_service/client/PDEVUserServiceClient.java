@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @author @maleeshasa
  * @Date 2024/11/15
  */
-@FeignClient(name = "iam-service")
+@FeignClient(name = "pdev-user-service")
 @Headers("Content-Type: application/json")
 public interface PDEVUserServiceClient {
 
